@@ -1,0 +1,39 @@
+ninja_required_version = 1.3
+cxx = cl
+nvcc = D:\developkit\cuda118\bin\nvcc
+
+cflags = /nologo /O2 /W3 /GL /DNDEBUG /MD /MD /wd4819 /wd4251 /wd4244 /wd4267 /wd4275 /wd4018 /wd4190 /wd4624 /wd4067 /wd4068 /EHsc -ID:\developkit\anaconda3\envs\RGBD_POSE_ESTIMATION\lib\site-packages\torch\include -ID:\developkit\anaconda3\envs\RGBD_POSE_ESTIMATION\lib\site-packages\torch\include\torch\csrc\api\include -ID:\developkit\anaconda3\envs\RGBD_POSE_ESTIMATION\lib\site-packages\torch\include\TH -ID:\developkit\anaconda3\envs\RGBD_POSE_ESTIMATION\lib\site-packages\torch\include\THC -ID:\developkit\cuda118\include -ID:\developkit\anaconda3\envs\RGBD_POSE_ESTIMATION\include -ID:\developkit\anaconda3\envs\RGBD_POSE_ESTIMATION\Include -ID:\developkit\VS\BuildTools\VC\Tools\MSVC\14.29.30133\include "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"
+post_cflags = -O2 -ID:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\_ext_src\include -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_ext -D_GLIBCXX_USE_CXX11_ABI=0 /std:c++17
+cuda_cflags = -std=c++17 --use-local-env -Xcompiler /MD -Xcompiler /wd4819 -Xcompiler /wd4251 -Xcompiler /wd4244 -Xcompiler /wd4267 -Xcompiler /wd4275 -Xcompiler /wd4018 -Xcompiler /wd4190 -Xcompiler /wd4624 -Xcompiler /wd4067 -Xcompiler /wd4068 -Xcompiler /EHsc -Xcudafe --diag_suppress=base_class_has_different_dll_interface -Xcudafe --diag_suppress=field_without_dll_interface -Xcudafe --diag_suppress=dll_interface_conflict_none_assumed -Xcudafe --diag_suppress=dll_interface_conflict_dllexport_assumed -ID:\developkit\anaconda3\envs\RGBD_POSE_ESTIMATION\lib\site-packages\torch\include -ID:\developkit\anaconda3\envs\RGBD_POSE_ESTIMATION\lib\site-packages\torch\include\torch\csrc\api\include -ID:\developkit\anaconda3\envs\RGBD_POSE_ESTIMATION\lib\site-packages\torch\include\TH -ID:\developkit\anaconda3\envs\RGBD_POSE_ESTIMATION\lib\site-packages\torch\include\THC -ID:\developkit\cuda118\include -ID:\developkit\anaconda3\envs\RGBD_POSE_ESTIMATION\include -ID:\developkit\anaconda3\envs\RGBD_POSE_ESTIMATION\Include -ID:\developkit\VS\BuildTools\VC\Tools\MSVC\14.29.30133\include "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"
+cuda_post_cflags = -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -O2 -ID:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\_ext_src\include -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_ext -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_89,code=compute_89 -gencode=arch=compute_89,code=sm_89
+cuda_dlink_post_cflags = 
+ldflags = 
+
+rule compile
+  command = cl /showIncludes $cflags -c $in /Fo$out $post_cflags
+  deps = msvc
+
+rule cuda_compile
+  depfile = $out.d
+  deps = gcc
+  command = $nvcc --generate-dependencies-with-compile --dependency-output $out.d $cuda_cflags -c $in -o $out $cuda_post_cflags
+
+
+
+
+
+build D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\build\temp.win-amd64-cpython-39\Release\_ext_src\src\ball_query.obj: compile D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\_ext_src\src\ball_query.cpp
+build D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\build\temp.win-amd64-cpython-39\Release\_ext_src\src\ball_query_gpu.obj: cuda_compile D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\_ext_src\src\ball_query_gpu.cu
+build D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\build\temp.win-amd64-cpython-39\Release\_ext_src\src\bindings.obj: compile D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\_ext_src\src\bindings.cpp
+build D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\build\temp.win-amd64-cpython-39\Release\_ext_src\src\group_points.obj: compile D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\_ext_src\src\group_points.cpp
+build D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\build\temp.win-amd64-cpython-39\Release\_ext_src\src\group_points_gpu.obj: cuda_compile D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\_ext_src\src\group_points_gpu.cu
+build D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\build\temp.win-amd64-cpython-39\Release\_ext_src\src\interpolate.obj: compile D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\_ext_src\src\interpolate.cpp
+build D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\build\temp.win-amd64-cpython-39\Release\_ext_src\src\interpolate_gpu.obj: cuda_compile D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\_ext_src\src\interpolate_gpu.cu
+build D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\build\temp.win-amd64-cpython-39\Release\_ext_src\src\sampling.obj: compile D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\_ext_src\src\sampling.cpp
+build D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\build\temp.win-amd64-cpython-39\Release\_ext_src\src\sampling_gpu.obj: cuda_compile D$:\wxl\pycharmProject\RGBD_POSE_ESTIMATION\sourceProject\SAM6D\SAM-6D\SAM-6D\Pose_Estimation_Model\model\pointnet2\_ext_src\src\sampling_gpu.cu
+
+
+
+
+
+

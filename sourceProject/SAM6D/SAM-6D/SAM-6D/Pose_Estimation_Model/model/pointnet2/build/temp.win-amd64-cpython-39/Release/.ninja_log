@@ -1,0 +1,10 @@
+# ninja log v5
+0	11219	7652142611686260	D:/wxl/pycharmProject/RGBD_POSE_ESTIMATION/sourceProject/SAM6D/SAM-6D/SAM-6D/Pose_Estimation_Model/model/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/ball_query.obj	53bc8babe80451a0
+18	11570	7652142612386483	D:/wxl/pycharmProject/RGBD_POSE_ESTIMATION/sourceProject/SAM6D/SAM-6D/SAM-6D/Pose_Estimation_Model/model/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/interpolate.obj	1c9d661b1e266add
+11	11842	7652142612561042	D:/wxl/pycharmProject/RGBD_POSE_ESTIMATION/sourceProject/SAM6D/SAM-6D/SAM-6D/Pose_Estimation_Model/model/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/group_points.obj	66044f05f5e8d3a9
+8	11967	7652142612728239	D:/wxl/pycharmProject/RGBD_POSE_ESTIMATION/sourceProject/SAM6D/SAM-6D/SAM-6D/Pose_Estimation_Model/model/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/bindings.obj	904b5dcd46d1fd71
+24	12161	7652142613016780	D:/wxl/pycharmProject/RGBD_POSE_ESTIMATION/sourceProject/SAM6D/SAM-6D/SAM-6D/Pose_Estimation_Model/model/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/sampling.obj	2d5073dc06a5ce94
+15	25885	7652142758123380	D:/wxl/pycharmProject/RGBD_POSE_ESTIMATION/sourceProject/SAM6D/SAM-6D/SAM-6D/Pose_Estimation_Model/model/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/group_points_gpu.obj	f68daa13c18cea19
+22	25933	7652142758169013	D:/wxl/pycharmProject/RGBD_POSE_ESTIMATION/sourceProject/SAM6D/SAM-6D/SAM-6D/Pose_Estimation_Model/model/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/interpolate_gpu.obj	737fa32ccdee442f
+6	25945	7652142758343977	D:/wxl/pycharmProject/RGBD_POSE_ESTIMATION/sourceProject/SAM6D/SAM-6D/SAM-6D/Pose_Estimation_Model/model/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/ball_query_gpu.obj	ee6131700d44bea8
+28	25956	7652142758458417	D:/wxl/pycharmProject/RGBD_POSE_ESTIMATION/sourceProject/SAM6D/SAM-6D/SAM-6D/Pose_Estimation_Model/model/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/sampling_gpu.obj	4b8b4dfcdd069ee2
