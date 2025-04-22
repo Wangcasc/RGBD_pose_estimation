@@ -35,7 +35,7 @@ def get_norm_info(mesh_path):
 
 
 # load cnos camera pose
-cam_poses = np.load(cnos_cam_fpath)
+cam_poses = np.load(cnos_cam_fpath)#
 
 # calculating the scale of CAD model
 if args.normalize:

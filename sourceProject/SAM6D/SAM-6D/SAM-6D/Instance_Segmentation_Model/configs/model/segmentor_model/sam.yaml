@@ -9,4 +9,6 @@ segmentor_width_size: ${model.segmentor_width_size}
 sam:
   _target_: model.sam.load_sam
   model_type: vit_h
-  checkpoint_dir: ./checkpoints/segment-anything/
+  checkpoint_dir:   D:/wxl/pycharmProject/RGBD_POSE_ESTIMATION/sourceProject/SAM6D/SAM-6D/SAM-6D/Instance_Segmentation_Model/checkpoints/segment-anything
+#  ./checkpoints/segment-anything/
+
